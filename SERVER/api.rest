@@ -1,0 +1,37 @@
+###
+GET http://localhost:3800/api/clientes/60be3f06af99a4365c7265f5
+
+###
+GET http://localhost:3800/api/clientes
+
+###
+POST http://localhost:3800/api/clientes
+Content-Type: application/json
+
+{
+    "cedula":"1310308455",
+    "nombre":"Douglas",
+    "apellido":"Mendoza",
+    "mail":"doumaster@hotmail.com"
+}
+
+###
+PUT http://localhost:3800/api/clientes/60be3f06af99a4365c7265f5
+Content-Type: application/json
+
+{
+    "nombre":"MARIA DOLORES",
+    "apellido":"LOLEZ"
+}
+
+###
+DELETE http://localhost:3800/api/clientes/60be3f06af99a4365c7265f5
+
+
+
+
+
+
+
+
+
