@@ -3,5 +3,5 @@ export interface Clientearray{
     nombre: string
     apellido: string
     mail: string
-    _id: string
+    _id?: string
 }

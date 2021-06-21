@@ -3,28 +3,32 @@
 		<div class="card">
 		    <div class="card-body">
 				<h1>Formulario de clientes</h1>
-				<form #clienteForm="ngForm">
+				<form #clienteForm="ngForm" (ngSubmit)="addCliente(clienteForm)">
 					<input type="hidden" name="_id">
 					<div class="form-group">
 					  <input type="text" name="cedula"
-						placeholder="Digite el numero de cedula" class="form-control">
+						placeholder="Digite el numero de cedula" class="form-control"
+						[(ngModel)]="clienteService.selectedcliente.cedula">
 					</div>
 					<div class="form-group">
 					  <div class="input-field col-s12">
 						<input type="text" name="nombre"
-						  placeholder="Digite nombres" class="form-control">
+						  placeholder="Digite nombres" class="form-control"
+						  [(ngModel)]="clienteService.selectedcliente.nombre">
 					  </div>
 					</div>
 					<div class="form-group">
 						<div class="input-field col-s12">
 						  <input type="text" name="apellido"
-							placeholder="Digite los apellidos" class="form-control">
+							placeholder="Digite los apellidos" class="form-control"
+							[(ngModel)]="clienteService.selectedcliente.apellido">
 						</div>
 					  </div>
 					  <div class="form-group">
 						<div class="input-field col-s12">
 						  <input type="text" name="mail"
-							placeholder="Digite el correo electronico" class="form-control">
+							placeholder="Digite el correo electronico" class="form-control"
+							[(ngModel)]="clienteService.selectedcliente.mail">
 						</div>
 					  </div>
 					<button class="btn btn-primary mr-2">Limpiar</button>

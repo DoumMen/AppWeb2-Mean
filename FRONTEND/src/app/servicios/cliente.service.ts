@@ -7,6 +7,12 @@ import { Clientearray } from '../models/cliente';
   providedIn: 'root'
 })
 export class ClienteService {
+  selectedcliente: Clientearray={
+    cedula:"",
+    nombre:"",
+    apellido:"",
+    mail:"",
+  };
   clientear!: Clientearray[];
   URL_API = "http://localhost:3800/api/clientes";
    
@@ -14,5 +20,9 @@ export class ClienteService {
 
   getclientes(){
     return this.http.get<Clientearray[]>(this.URL_API);
+  }
+
+  postcliente(cliente: Clientearray){
+    return this.http.post(this.URL_API,cliente);
   }
 }

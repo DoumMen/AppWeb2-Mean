@@ -24,4 +24,17 @@ export class ClientesComponent implements OnInit {
       err => console.error(err)
     )
   }
+
+  addCliente(form: NgForm) {
+    this.clienteService.postcliente(form.value).subscribe(
+      res => {console.log(res);
+      this.getclientes();
+      this.resetForm(form);})
+}
+
+resetForm(form: NgForm) {
+  if (form) {
+    form.reset();
+  }
+} 
 }

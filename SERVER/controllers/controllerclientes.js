@@ -4,8 +4,8 @@ const Cliente = require('../models/clientes')
 
 clientesctrl.crearcliente = async(req, res) => { 
     const nuevocliente = new Cliente(req.body)
-    await nuevocliente.save()
-    res.send('Creando cliente')
+    await nuevocliente.save();
+    res.json({ status: "Cliente creado satisfactoriamente" });
 }  
 
 clientesctrl.getcliente = async (req, res) => {
