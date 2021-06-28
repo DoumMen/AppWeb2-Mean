@@ -12,6 +12,7 @@ export class ClienteService {
     nombre:"",
     apellido:"",
     mail:"",
+    _id:"",
   };
   clientear!: Clientearray[];
   URL_API = "http://localhost:3800/api/clientes";
@@ -24,5 +25,13 @@ export class ClienteService {
 
   postcliente(cliente: Clientearray){
     return this.http.post(this.URL_API,cliente);
+  }
+
+  eliminarCliente(_id: string){
+    return this.http.delete(this.URL_API+'/'+_id);
+  }
+
+  actualizarCliente(cliente: Clientearray){
+    return this.http.put(this.URL_API+'/'+cliente._id,cliente);
   }
 }

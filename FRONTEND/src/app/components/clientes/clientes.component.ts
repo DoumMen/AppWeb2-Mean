@@ -26,15 +26,37 @@ export class ClientesComponent implements OnInit {
   }
 
   addCliente(form: NgForm) {
+    if(form.value._id){
+      this.clienteService.actualizarCliente(form.value).subscribe(
+        res => {console.log(res);
+        this.resetForm(form);},
+        err => console.error()
+      )
+    }
+    else{
     this.clienteService.postcliente(form.value).subscribe(
       res => {console.log(res);
       this.getclientes();
       this.resetForm(form);})
+    }
+}
+
+eliminarCliente(id: string){
+  if (confirm("Desea eliminar")){
+    this.clienteService.eliminarCliente(id).subscribe(
+    res => this.getclientes(),
+    err => console.error(err));
+    }
+}
+
+editarCliente(cliente: Clientearray){
+  this.clienteService.selectedcliente = cliente;
 }
 
 resetForm(form: NgForm) {
   if (form) {
     form.reset();
+    this.getclientes();
   }
 } 
 }

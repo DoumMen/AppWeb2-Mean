@@ -4,7 +4,7 @@
 		    <div class="card-body">
 				<h1>Formulario de clientes</h1>
 				<form #clienteForm="ngForm" (ngSubmit)="addCliente(clienteForm)">
-					<input type="hidden" name="_id">
+					<input type="hidden" name="_id" [(ngModel)]="clienteService.selectedcliente._id">
 					<div class="form-group">
 					  <input type="text" name="cedula"
 						placeholder="Digite el numero de cedula" class="form-control"
@@ -31,7 +31,7 @@
 							[(ngModel)]="clienteService.selectedcliente.mail">
 						</div>
 					  </div>
-					<button class="btn btn-primary mr-2">Limpiar</button>
+					<button class="btn btn-primary mr-2" (click)="resetForm(clienteForm)">Limpiar</button>
 					<button class="btn btn-secondary">Guardar</button>
 				</form>
 		    </div>
@@ -62,10 +62,10 @@
 					<td>{{ cliente.apellido }}</td>
 					<td>{{ cliente.mail }}</td>
 					<td>
-						<a class="btn btn-secondary btn-sm">
+						<a class="btn btn-secondary btn-sm" (click)="editarCliente(cliente)">
 						  <i class="material-icons">edit</i>
 						</a>
-						<a class="btn btn-danger btn-sm">
+						<a class="btn btn-danger btn-sm" (click)="eliminarCliente(cliente._id)">
 						  <i class="material-icons">delete</i>
 						</a>
 					  </td>

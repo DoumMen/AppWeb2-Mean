@@ -20,7 +20,7 @@ clientesctrl.getclientes = async(req, res) => {
 
 clientesctrl.editcliente = async(req, res) => {
     await Cliente.findByIdAndUpdate(req.params.id,req.body)
-    res.send('Cliente actualizado')
+    res.json({status:'Cliente actualizado'})
 }
 
 clientesctrl.deletecliente = async(req, res) => {
