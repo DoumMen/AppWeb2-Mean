@@ -2,7 +2,7 @@
 	<div class="col-md-4">
 		<div class="card">
 		    <div class="card-body">
-				<h1>Formulario de clientes</h1>
+				<h2>Formulario de clientes</h2>
 				<form #clienteForm="ngForm" (ngSubmit)="addCliente(clienteForm)">
 					<input type="hidden" name="_id" [(ngModel)]="clienteService.selectedcliente._id">
 					<div class="form-group">
@@ -74,4 +74,3 @@
 		</table>
 	</div>
 </div>
-

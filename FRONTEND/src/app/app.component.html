@@ -1,8 +1,22 @@
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand">Stack MEAN Clientes</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mi aplicacion</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/clientes" routerLinkActive="active">Principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signin" routerLinkActive= "active">Signin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup" routerLinkActive= "active">Signup</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <app-clientes>
-  </app-clientes>
+<div class="container p-4">
+  <router-outlet></router-outlet>
+</div>

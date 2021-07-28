@@ -10,6 +10,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.use("/api/clientes",require('../routes/clientes'));
+app.use("/api/clientes",require('./routes/clientes'));
+app.use("/api",require('./routes/usuario'));
  
 module.exports = app;

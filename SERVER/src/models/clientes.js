@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+const {Schema, model} = require('mongoose');
 
 const clienteschema = new Schema({
     cedula:{type: String, required: true},
@@ -6,8 +6,7 @@ const clienteschema = new Schema({
     apellido:{type: String, required: true},
     mail:{type: String, required: true},
 }, {
-    timestamps: true,
-    versionKey:false
-})
+    timestamps: true
+});
 
 module.exports = model("cliente",clienteschema);

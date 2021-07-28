@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ClientesComponent } from "./components/clientes/clientes.component";
+import { SigninComponent } from "./components/signin/signin.component";
+import { SignupComponent } from "./components/signup/signup.component";
+
+const routes: Routes = [
+  {path:'', redirectTo: '/clientes',pathMatch: 'full'},
+  {path: 'clientes', component: ClientesComponent},
+  {path: 'signin', component: SigninComponent},
+  {path:'signup', component: SignupComponent},
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

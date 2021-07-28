@@ -28,16 +28,19 @@ export class ClientesComponent implements OnInit {
   addCliente(form: NgForm) {
     if(form.value._id){
       this.clienteService.actualizarCliente(form.value).subscribe(
-        res => {console.log(res);
-        this.resetForm(form);},
+        res => {
+          console.log(res);
+          alert(res);
+          this.resetForm(form);
+        },
         err => console.error()
       )
-    }
+     }
     else{
     this.clienteService.postcliente(form.value).subscribe(
       res => {console.log(res);
-      this.getclientes();
-      this.resetForm(form);})
+      this.resetForm(form);},
+      err => console.error(err))
     }
 }
 
@@ -59,4 +62,8 @@ resetForm(form: NgForm) {
     this.getclientes();
   }
 } 
+
+validarcedula(ced: string){
+
+}
 }

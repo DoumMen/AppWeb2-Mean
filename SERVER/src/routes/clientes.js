@@ -7,4 +7,4 @@ router.get('/:id',clientesctrl.getcliente);
 router.post('/',clientesctrl.crearcliente);
 router.put('/:id',clientesctrl.editcliente);
 router.delete('/:id',clientesctrl.deletecliente);
-module.exports = router
+module.exports = router;
