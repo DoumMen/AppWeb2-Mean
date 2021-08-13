@@ -1,22 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Mi aplicacion</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/clientes" routerLinkActive="active">Principal</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/signin" routerLinkActive= "active">Signin</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/signup" routerLinkActive= "active">Signup</a>
-        </li>
+    <a class="navbar-brand">Mi aplicacion</a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Opciones">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="Opciones" class="collapse navbar-collapse">
+    
+      <ul class="navbar-nav ml-auto">
+        <ng-container *ngIf="!autenticaservice.logeado(); else Salir">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signin" routerLinkActive="active">Signin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup" routerLinkActive="active">Signup</a>
+          </li>
+        </ng-container>
+        <ng-template #Salir>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" (click)="autenticaservice.logout()">Logout</a>
+          </li>
+        </ng-template>
       </ul>
     </div>
   </div>
 </nav>
-
-<div class="container p-4">
+<div *ngIf="!autenticaservice.logeado();else main">
   <router-outlet></router-outlet>
 </div>
+<ng-template #main>
+  <app-menulateral></app-menulateral>
+</ng-template>

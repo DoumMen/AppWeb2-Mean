@@ -3,7 +3,7 @@
 		<div class="card">
 		    <div class="card-body">
 				<h2>Formulario de clientes</h2>
-				<form #clienteForm="ngForm" (ngSubmit)="addCliente(clienteForm)">
+				<form #clienteForm="ngForm">
 					<input type="hidden" name="_id" [(ngModel)]="clienteService.selectedcliente._id">
 					<div class="form-group">
 					  <input type="text" name="cedula"
@@ -32,7 +32,7 @@
 						</div>
 					  </div>
 					<button class="btn btn-primary mr-2" (click)="resetForm(clienteForm)">Limpiar</button>
-					<button class="btn btn-secondary">Guardar</button>
+					<button class="btn btn-secondary" (click)="addCliente(clienteForm)">Guardar</button>
 				</form>
 		    </div>
 		</div>

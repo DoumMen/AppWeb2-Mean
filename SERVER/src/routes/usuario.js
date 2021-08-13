@@ -25,8 +25,6 @@ router.post('/login',async (req,res)=>{
 });
 
 router.get('/ver',verificatoken,async (req,res)=>{
-    const losuser = await usuario.find();
-    res.send(losuser);
     res.send("Autorizado")
 });
 
